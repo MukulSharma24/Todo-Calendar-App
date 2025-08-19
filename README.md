@@ -34,3 +34,41 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+***************************************************** starts from here :
+
+# Todo Calendar App
+
+## Overview
+
+This is a web application that helps you create and manage todo tasks.
+
+
+## Features
+
+- Create, edit, and delete todo tasks.
+- View todos on a calendar with visual indicators.
+- Drag and drop unscheduled todos onto calendar days to schedule them.
+- Modify how long a scheduled task lasts (duration).
+- Undo scheduling of tasks to move them back to the unscheduled list.
+- Persistent storage using a PostgreSQL database.
+
+
+## Technology Stack
+
+- **Next.js (React Framework):**  
+  Used for building the frontend UI and server-side API routes, enabling fast, modern web development.
+
+- **@hello-pangea/dnd:**  
+  A drag-and-drop library for React that enables dragging todos to the calendar.
+
+- **React Calendar:**  
+  Displays the monthly calendar UI with date selection and visual todo markers.
+
+- **Prisma ORM:**  
+  Provides a type-safe and simple way to interact with the PostgreSQL database.
+
+- **PostgreSQL:**  
+  The database used to store todos persistently.
+
+
