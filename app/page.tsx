@@ -17,23 +17,23 @@ export default function HomePage() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
-  // Fetch todos from API and update the state
+  
   const fetchTodos = async () => {
     const res = await fetch("/api/todos");
     const data = await res.json();
     setTodos(data);
   };
 
-  // Fetch todos once on mount
+  
   useEffect(() => {
     fetchTodos();
   }, []);
 
-  // Helper: Format date to yyyy-mm-dd (local time)
+  
   const formatDateLocal = (date: Date) =>
     `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,"0")}-${date.getDate().toString().padStart(2,"0")}`;
 
-  // Todos for selected date - using local timezone format
+  
   const todosForSelectedDate = todos.filter(
     (todo) =>
       selectedDate &&
@@ -41,7 +41,7 @@ export default function HomePage() {
       formatDateLocal(new Date(todo.scheduledAt)) === formatDateLocal(selectedDate)
   );
 
-  // Handler to delete todo, refetch list after
+  
   const handleDelete = async (id: number) => {
     const res = await fetch(`/api/todos/${id}`, { method: "DELETE" });
     if (res.ok) {
@@ -49,7 +49,7 @@ export default function HomePage() {
     }
   };
 
-  // Safe date rendering for hydration consistency
+  
   const renderDate = selectedDate
     ? `${selectedDate.getDate()}/${selectedDate.getMonth() + 1}/${selectedDate.getFullYear()}`
     : "No date selected";
@@ -95,7 +95,7 @@ export default function HomePage() {
             onChange={(value) => {
               if (value instanceof Date) setSelectedDate(value);
             }}
-            locale="en-GB" // fixed locale for hydration consistency
+            locale="en-GB" 
             tileContent={({ date }) => {
               const dateStr = formatDateLocal(date);
               const hasTodo = todos.some(

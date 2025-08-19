@@ -11,7 +11,6 @@ export default function SchedulePage() {
     e.preventDefault();
     setMessage("");
 
-    // Convert local datetime input to ISO format
     const scheduledAtIso = new Date(scheduledAt).toISOString();
 
     const res = await fetch("/api/schedule", {

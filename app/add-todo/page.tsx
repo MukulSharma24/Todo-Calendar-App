@@ -10,16 +10,16 @@ export default function AddTodoPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMessage(""); // Clear any previous message
+    setMessage(""); 
     const res = await fetch("/api/todos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, description }),
     });
     if (res.ok) {
-      setTitle(""); // clear for good UX
+      setTitle(""); 
       setDescription("");
-      router.push("/"); // Instant redirect => instantly update main list
+      router.push("/");  
     } else {
       const err = await res.json();
       setMessage(err.error || "Failed to add todo.");

@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   try {
     const { id, scheduledAt, duration } = await req.json();
 
-    // Debug: log incoming id and types
+    
     console.log("Trying to schedule todo with id:", id, "typeof id:", typeof id);
 
     if (!id || isNaN(Number(id))) {
@@ -47,7 +47,7 @@ export async function PUT(req: NextRequest) {
   try {
     const { id } = await req.json();
 
-    // Debug: log incoming id and types
+    
     console.log("Trying to unschedule todo with id:", id, "typeof id:", typeof id);
 
     if (!id || isNaN(Number(id))) {

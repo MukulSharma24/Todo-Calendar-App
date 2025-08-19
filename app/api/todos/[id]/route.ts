@@ -45,7 +45,7 @@ export async function PUT(
     return NextResponse.json({ error: "Invalid duration" }, { status: 400 });
   }
 
-  // Check existence before update
+  
   const todoExists = await prisma.todo.findUnique({ where: { id } });
   if (!todoExists) {
     return NextResponse.json({ error: "Todo not found for update." }, { status: 404 });
