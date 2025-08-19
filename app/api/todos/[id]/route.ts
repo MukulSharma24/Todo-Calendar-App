@@ -35,12 +35,12 @@ export async function PUT(
 
   const data = await req.json();
 
-  // Validate scheduledAt date
+  
   if (data.scheduledAt && isNaN(Date.parse(data.scheduledAt))) {
     return NextResponse.json({ error: "Invalid scheduledAt value" }, { status: 400 });
   }
 
-  // Validate duration number
+  
   if (data.duration !== undefined && isNaN(Number(data.duration))) {
     return NextResponse.json({ error: "Invalid duration" }, { status: 400 });
   }
